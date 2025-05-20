@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق تخطيط الدراسة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>تطبيق تنظيم وقت الدراسة</title>
     <style>
         body {
-          font-family: 'Segoe UI', sans-serif;
-          background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
+          font-family: Arial, sans-serif;
+          background: linear-gradient(to bottom, #f0f0f0, #dbeafe);
           text-align: center;
-          margin: 0;
+          padding: 50px;
+          direction: rtl;
         }
         h1 {
-          color: #00796b;
-          margin-bottom: 40px;
+          color: #4f46e5;
         }
+
         .button {
-          background-color: #007BFF;
+          display: block;
+          width: 250px;
+          margin: 20px auto;
+          padding: 15px;
+          background-color: #4f46e5;
           color: white;
-          padding: 14px 30px;
-          margin: 12px;
-          border: none;
-          border-radius: 10px;
-          font-size: 18px;
-          cursor: pointer;
-          transition: all 0.3s ease;
           text-decoration: none;
-          min-width: 250px;
+          font-weight: bold;
+          border-radius: 10px;
+          transition: background 0.3s;
+          cursor: pointer;
         }
+
         .button:hover {
-          background-color: #0056b3;
-          transform: scale(1.05);
-        }
-        .note {
-          margin-top: 40px;
-          color: #555;
-          font-size: 14px;
+          background-color: #3730a3;
         }
     </style>
 </head>
 <body>
-<h1>📚 أهلاً بك في تطبيق تخطيط الدراسة</h1>
 
-<a class="button" href="app-release.apk" download>📱 تحميل التطبيق للأندرويد</a>
-<a class="button" href="index.html">🌐 تشغيل التطبيق للكمبيوتر والآيفون</a>
+<h1>مرحبًا بك في تطبيق تنظيم وقت الدراسة!</h1>
 
-<div class="note">جميع الحقوق محفوظة © 2025</div>
+<a class="button" onclick="startDownload()">📱 تحميل للأندرويد</a>
+<a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">💻 فتح نسخة الويب (الكمبيوتر)</a>
+<a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">📱 فتح على متصفح الآيفون</a>
+
+<script>
+    function startDownload() {
+      const link = document.createElement('a');
+      link.href = "https://github.com/MohamedAgbaryh/study-planner-app/releases/download/v1.0.0/app-release.apk";
+      link.download = "app-release.apk";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+</script>
+
 </body>
 </html>
