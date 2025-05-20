@@ -162,17 +162,21 @@ class _ExamPlanScreenState extends State<ExamPlanScreen> {
         .doc(docId)
         .update({'study_sessions': existingSessions});
 
-    // ✅ منع تشغيل الإشعارات على الويب
-    if (Platform.isAndroid || Platform.isIOS) {
-      for (var session in sessions) {
-        await NotificationsHelper.scheduleNotification(
-          title: session['type'] == 'study' ? '📚 وقت الدراسة' : '☕ وقت الاستراحة',
-          body: session['type'] == 'study'
-              ? 'ابدأ دراسة ${widget.subject} الآن!'
-              : 'خذ استراحة قصيرة ثم ارجع للمذاكرة! 💪',
-          scheduledDate: session['start'],
-        );
+    // ✅ منع كسر الإشعارات على الويب
+    try {
+      if (Platform.isAndroid || Platform.isIOS) {
+        for (var session in sessions) {
+          await NotificationsHelper.scheduleNotification(
+            title: session['type'] == 'study' ? '📚 وقت الدراسة' : '☕ وقت الاستراحة',
+            body: session['type'] == 'study'
+                ? 'ابدأ دراسة ${widget.subject} الآن!'
+                : 'خذ استراحة قصيرة ثم ارجع للمذاكرة! 💪',
+            scheduledDate: session['start'],
+          );
+        }
       }
+    } catch (_) {
+      // لا تفعل شيء على الويب
     }
   }
 
