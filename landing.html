@@ -6,42 +6,56 @@
     <title>تطبيق تنظيم وقت الدراسة</title>
     <style>
         body {
-          font-family: Arial, sans-serif;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
           background: linear-gradient(to bottom, #f0f0f0, #dbeafe);
           text-align: center;
           padding: 50px;
           direction: rtl;
         }
+
         h1 {
           color: #4f46e5;
+          font-size: 28px;
+          margin-bottom: 30px;
         }
 
         .button {
           display: block;
-          width: 250px;
-          margin: 20px auto;
-          padding: 15px;
-          background-color: #4f46e5;
+          margin: 15px auto;
+          padding: 15px 25px;
+          font-size: 18px;
           color: white;
+          background-color: #4f46e5;
           text-decoration: none;
-          font-weight: bold;
-          border-radius: 10px;
-          transition: background 0.3s;
+          border-radius: 12px;
+          width: fit-content;
+          min-width: 250px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          transition: background-color 0.3s ease, transform 0.2s ease;
           cursor: pointer;
         }
 
         .button:hover {
           background-color: #3730a3;
+          transform: scale(1.05);
+        }
+
+        .note {
+          margin-top: 30px;
+          font-size: 14px;
+          color: #555;
         }
     </style>
 </head>
 <body>
 
-<h1>مرحبًا بك في تطبيق تنظيم وقت الدراسة!</h1>
+<h1>📚 أهلاً بك في تطبيق تنظيم وقت الدراسة</h1>
 
 <a class="button" onclick="startDownload()">📱 تحميل للأندرويد</a>
 <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">💻 فتح نسخة الويب (الكمبيوتر)</a>
 <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">📱 فتح على متصفح الآيفون</a>
+
+<div class="note">جميع الحقوق محفوظة © 2025</div>
 
 <script>
     function startDownload() {
