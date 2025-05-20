@@ -6,41 +6,85 @@
     <title>تطبيق تنظيم وقت الدراسة</title>
     <style>
         body {
-          font-family: Arial, sans-serif;
-          background: linear-gradient(to bottom, #f0f0f0, #dbeafe);
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background: linear-gradient(to bottom right, #e0f7fa, #e6e9f0);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
           text-align: center;
-          padding: 50px;
-          direction: rtl;
         }
+
         h1 {
-          color: #4f46e5;
+          color: #1e3a8a;
+          font-size: 28px;
+          margin-bottom: 10px;
         }
+
+        p {
+          color: #555;
+          margin-bottom: 30px;
+          font-size: 16px;
+        }
+
         .button {
           display: block;
-          width: 250px;
-          margin: 20px auto;
-          padding: 15px;
+          width: 280px;
+          padding: 14px 20px;
+          margin: 12px auto;
           background-color: #4f46e5;
           color: white;
-          text-decoration: none;
           font-weight: bold;
-          border-radius: 10px;
-          transition: background 0.3s;
-          cursor: pointer;
+          border-radius: 12px;
+          text-decoration: none;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          transition: all 0.3s ease;
+          font-size: 16px;
         }
+
         .button:hover {
           background-color: #3730a3;
+          transform: scale(1.02);
+        }
+
+        .container {
+          background-color: white;
+          padding: 40px;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 90%;
+        }
+
+        @media (max-width: 500px) {
+          .button {
+            width: 90%;
+          }
+
+          h1 {
+            font-size: 22px;
+          }
         }
     </style>
 </head>
 <body>
-<h1>مرحبًا بك في تطبيق تنظيم وقت الدراسة!</h1>
 
-<!-- ✅ زر تحميل مباشر للأندرويد -->
-<a class="button" onclick="startDownload()">📱 تحميل للأندرويد</a>
+<div class="container">
+    <h1>🎓 أهلاً بك في تطبيق تنظيم وقت الدراسة</h1>
+    <p>نظّم امتحاناتك، خطط لمذاكرتك، وحقق النجاح بسهولة!</p>
 
-<a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">💻 فتح نسخة الويب (الكمبيوتر)</a>
-<a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">📱 فتح على متصفح الآيفون</a>
+    <!-- زر تحميل مباشر للأندرويد -->
+    <a class="button" onclick="startDownload()">📱 تحميل للأندرويد</a>
+
+    <!-- زر نسخة الويب -->
+    <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">💻 فتح نسخة الويب (الكمبيوتر)</a>
+
+    <!-- زر نسخة الآيفون -->
+    <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">📱 فتح على متصفح الآيفون</a>
+</div>
 
 <script>
     function startDownload() {
@@ -52,5 +96,6 @@
       document.body.removeChild(link);
     }
 </script>
+
 </body>
 </html>
