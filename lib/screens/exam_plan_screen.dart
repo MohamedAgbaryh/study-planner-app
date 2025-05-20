@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart'; // ✅ بديل لـ dart:io
 import 'notifications_helper.dart';
 import 'weekly_study_screen.dart';
 import '../app_texts.dart';
-
-// ✅ دعم التحقق من النظام لتجنب الإشعارات على الويب
-import 'dart:io' show Platform;
 
 class ExamPlanScreen extends StatefulWidget {
   final String subject;
@@ -116,7 +114,7 @@ class _ExamPlanScreenState extends State<ExamPlanScreen> {
       for (int h = 0; h < studyHours; h++) {
         int randomHour;
         do {
-          randomHour = 14 + Random().nextInt(7); // بين 14:00 و 20:00
+          randomHour = 14 + Random().nextInt(7);
           attempts++;
         } while (usedHoursByDay[dateKey]!.contains(randomHour) && attempts < 30);
 
@@ -162,8 +160,7 @@ class _ExamPlanScreenState extends State<ExamPlanScreen> {
         .doc(docId)
         .update({'study_sessions': existingSessions});
 
-    // ✅ منع تشغيل الإشعارات على الويب
-    if (Platform.isAndroid || Platform.isIOS) {
+    if (!kIsWeb) {
       for (var session in sessions) {
         await NotificationsHelper.scheduleNotification(
           title: session['type'] == 'study' ? '📚 وقت الدراسة' : '☕ وقت الاستراحة',
@@ -179,7 +176,6 @@ class _ExamPlanScreenState extends State<ExamPlanScreen> {
   @override
   Widget build(BuildContext context) {
     final texts = AppTexts.of(context);
-
     final studyDate = widget.examDate.subtract(Duration(days: widget.availableDays - 1 - currentDayIndex));
     final readableDate = "${studyDate.day}/${studyDate.month}/${studyDate.year}";
 

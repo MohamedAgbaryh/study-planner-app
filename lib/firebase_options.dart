@@ -4,16 +4,6 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -31,7 +21,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
+              'you can reconfigure this by running the FlutterFire CLI again.',
         );
       default:
         throw UnsupportedError(
@@ -46,7 +36,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '669179933275',
     projectId: 'studyplanner-69823',
     authDomain: 'studyplanner-69823.firebaseapp.com',
-    storageBucket: 'studyplanner-69823.firebasestorage.app',
+    storageBucket: 'studyplanner-69823.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -54,7 +44,7 @@ class DefaultFirebaseOptions {
     appId: '1:669179933275:android:4ff8cb75bf4f165b35c57e',
     messagingSenderId: '669179933275',
     projectId: 'studyplanner-69823',
-    storageBucket: 'studyplanner-69823.firebasestorage.app',
+    storageBucket: 'studyplanner-69823.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -62,7 +52,7 @@ class DefaultFirebaseOptions {
     appId: '1:669179933275:ios:1797bd63fd95d3fb35c57e',
     messagingSenderId: '669179933275',
     projectId: 'studyplanner-69823',
-    storageBucket: 'studyplanner-69823.firebasestorage.app',
+    storageBucket: 'studyplanner-69823.appspot.com',
     iosBundleId: 'com.example.studyTimePlanner',
   );
 
@@ -71,7 +61,7 @@ class DefaultFirebaseOptions {
     appId: '1:669179933275:ios:1797bd63fd95d3fb35c57e',
     messagingSenderId: '669179933275',
     projectId: 'studyplanner-69823',
-    storageBucket: 'studyplanner-69823.firebasestorage.app',
+    storageBucket: 'studyplanner-69823.appspot.com',
     iosBundleId: 'com.example.studyTimePlanner',
   );
 
@@ -81,7 +71,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '669179933275',
     projectId: 'studyplanner-69823',
     authDomain: 'studyplanner-69823.firebaseapp.com',
-    storageBucket: 'studyplanner-69823.firebasestorage.app',
+    storageBucket: 'studyplanner-69823.appspot.com',
   );
-
 }
