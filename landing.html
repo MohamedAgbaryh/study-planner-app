@@ -15,7 +15,6 @@
         h1 {
           color: #4f46e5;
         }
-
         .button {
           display: block;
           width: 250px;
@@ -35,10 +34,9 @@
     </style>
 </head>
 <body>
-
 <h1>مرحبًا بك في تطبيق تنظيم وقت الدراسة!</h1>
 
-<!-- ✅ زر التحميل يعمل فورًا -->
+<!-- ✅ زر تحميل مباشر للأندرويد -->
 <a class="button" onclick="startDownload()">📱 تحميل للأندرويد</a>
 
 <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">💻 فتح نسخة الويب (الكمبيوتر)</a>
@@ -48,13 +46,11 @@
     function startDownload() {
       const link = document.createElement('a');
       link.href = "https://github.com/MohamedAgbaryh/study-planner-app/releases/download/v1.0.0/app-release.apk";
-      link.setAttribute('download', '');
+      link.download = "app-release.apk";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }
 </script>
-
 </body>
 </html>
-<!-- آخر تحديث: 20 مايو 2025 -->
