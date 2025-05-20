@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'; // ✅ مهم لـ kIsWeb
+import 'package:flutter/foundation.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'screens/splash_screen.dart';
@@ -10,14 +10,18 @@ import 'firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // ✅ تهيئة Firebase لجميع المنصات
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
-  // ✅ التهيئة فقط على Android و iOS
-  if (!kIsWeb) {
-    await NotificationsHelper.initialize();
+    if (!kIsWeb) {
+      await NotificationsHelper.initialize();
+    }
+  } catch (e) {
+    if (kDebugMode) {
+      print('❌ Firebase init failed: $e');
+    }
   }
 
   runApp(const MyApp());

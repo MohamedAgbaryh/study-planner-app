@@ -83,4 +83,5 @@ class DefaultFirebaseOptions {
     authDomain: 'studyplanner-69823.firebaseapp.com',
     storageBucket: 'studyplanner-69823.firebasestorage.app',
   );
+
 }
