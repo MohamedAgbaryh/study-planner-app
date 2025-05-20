@@ -58,20 +58,18 @@ class _ExamPlanScreenState extends State<ExamPlanScreen> {
     } else {
       await _generateSessions();
 
-      if (!context.mounted) return;
+      if (!mounted) return;
 
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(texts.examAddedSuccessfully)),
-        );
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (_) => WeeklyStudyScreen(studentId: widget.studentId),
-          ),
-        );
-      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(texts.examAddedSuccessfully)),
+      );
 
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => WeeklyStudyScreen(studentId: widget.studentId),
+        ),
+      );
     }
   }
 
