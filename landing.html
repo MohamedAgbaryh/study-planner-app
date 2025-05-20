@@ -6,62 +6,49 @@
     <title>تطبيق تنظيم وقت الدراسة</title>
     <style>
         body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-family: Arial, sans-serif;
           background: linear-gradient(to bottom, #f0f0f0, #dbeafe);
           text-align: center;
           padding: 50px;
           direction: rtl;
         }
-
         h1 {
           color: #4f46e5;
-          font-size: 28px;
-          margin-bottom: 30px;
         }
 
         .button {
           display: block;
-          margin: 15px auto;
-          padding: 15px 25px;
-          font-size: 18px;
-          color: white;
+          width: 250px;
+          margin: 20px auto;
+          padding: 15px;
           background-color: #4f46e5;
+          color: white;
           text-decoration: none;
-          border-radius: 12px;
-          width: fit-content;
-          min-width: 250px;
-          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-          transition: background-color 0.3s ease, transform 0.2s ease;
+          font-weight: bold;
+          border-radius: 10px;
+          transition: background 0.3s;
           cursor: pointer;
         }
-
         .button:hover {
           background-color: #3730a3;
-          transform: scale(1.05);
-        }
-
-        .note {
-          margin-top: 30px;
-          font-size: 14px;
-          color: #555;
         }
     </style>
 </head>
 <body>
 
-<h1>📚 أهلاً بك في تطبيق تنظيم وقت الدراسة</h1>
+<h1>مرحبًا بك في تطبيق تنظيم وقت الدراسة!</h1>
 
+<!-- ✅ زر التحميل يعمل فورًا -->
 <a class="button" onclick="startDownload()">📱 تحميل للأندرويد</a>
+
 <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">💻 فتح نسخة الويب (الكمبيوتر)</a>
 <a class="button" href="https://mohamedagbaryh.github.io/study-planner-app/">📱 فتح على متصفح الآيفون</a>
-
-<div class="note">جميع الحقوق محفوظة © 2025</div>
 
 <script>
     function startDownload() {
       const link = document.createElement('a');
       link.href = "https://github.com/MohamedAgbaryh/study-planner-app/releases/download/v1.0.0/app-release.apk";
-      link.download = "app-release.apk";
+      link.setAttribute('download', '');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -70,3 +57,4 @@
 
 </body>
 </html>
+<!-- آخر تحديث: 20 مايو 2025 -->
