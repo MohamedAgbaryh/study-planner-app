@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "me.carda.awesome_notifications-mergeReleaseResources-42:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\AboKamal\\.gradle\\caches\\transforms-3\\ac38ab3ce984f33131dac0752e5ff7f7\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "me.carda.awesome_notifications-merged_res-44:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\AboKamal\\.gradle\\caches\\transforms-3\\ac38ab3ce984f33131dac0752e5ff7f7\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        }
+    ]
+}
